@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    overflow: auto;
+  }
+  
+  #star-canvas {
+    position: fixed;
+    inset: 0; /* shorthand for top: 0; left: 0; right: 0; bottom: 0 */
+    z-index: 0;
+    background: #111;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .content {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ccc;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    color: #fff;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #444;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .about p, .contact p {
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  
+  .contact a {
+    color: #4af;
+    text-decoration: none;
+  }
+  
+  .contact a:hover {
+    text-decoration: underline;
+  }
+  
+  .projects .project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .project {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .project:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .project h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    .projects .project-list {
+      grid-template-columns: 1fr;
+    }
+  }
+  
