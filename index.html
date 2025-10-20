@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+  <title>JOYCE.KONG // PORTFOLIO.EXE</title>
   <!-- Link to CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -17,7 +17,7 @@
     <header>
       <h1>Joyce Kong</h1>
       <nav>
-        <a href="#projects">core projects</a>
+        <a href="#projects">Projects</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -28,39 +28,54 @@
       <h2>Projects</h2>
       <div class="project-list">
         <!-- Project 1: JamBoxx Infinite App -->
-        <div class="project">
+        <div class="project" data-id="01">
+          <div class="project-header">
+            <div class="project-icon"></div>
+            <div class="project-status">active</div>
+          </div>
           <h3>JamBoxx Infinite App</h3>
-          <br/>
-          <p style="font-size: 10px;">
-            A full-stack application for music collaboration, enabling young artists to upload,
-            share, and remix tracks in real-time.
-          </p>
-          <br/>
-          <!-- Replace # with your actual project link or GitHub repo -->
+          <div class="project-tags">
+            <span class="project-tag">full-stack</span>
+            <span class="project-tag">real-time</span>
+            <span class="project-tag">music</span>
+          </div>
+          <p>Full-stack music collaboration platform enabling real-time track upload, sharing, and remixing for emerging artists.</p>
           <a href="https://students.cs.ucl.ac.uk/2024/group8/" target="_blank">View Project</a>
         </div>
 
         <!-- Project 2: Student Grade Management System -->
-        <div class="project">
-          <h3>OncoX: herb x drug </h3>
-        <br/>
-          <p style="font-size: 10px;">
-            The first TCM × Herb AI prediction platform in oncology, implementing a 5-model machine learning pipeline for cross-analysis of herb–drug interactions, integrating live FAERS pharmacovigilance data for clinical validation.
-          </p>
-          <br />
-            <a href="https://tcm-clinical-demo-1759132729.s3.amazonaws.com/index.html" target="_blank">View Project</a>
-
+        <div class="project" data-id="02">
+          <div class="project-header">
+            <div class="project-icon"></div>
+            <div class="project-status">deployed</div>
+          </div>
+          <h3>OncoX AI System</h3>
+          <div class="project-tags">
+            <span class="project-tag">AI/ML</span>
+            <span class="project-tag">healthcare</span>
+            <span class="project-tag">TCM</span>
+          </div>
+          <p>First TCM × Herb AI prediction platform in oncology. 5-model ML pipeline for herb–drug interaction analysis with live FAERS pharmacovigilance data integration.</p>
+          <a href="https://tcm-clinical-demo-1759132729.s3.amazonaws.com/index.html" target="_blank">View Project</a>
         </div>
 
         <!-- Project 3: Escape Room Game -->
-        <div class="project">
-          <h3>Cofounder of Healware</h3> 
+        <div class="project" data-id="03">
+          <div class="project-header">
+            <div class="project-icon"></div>
+            <div class="project-status">startup</div>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">healthtech</span>
+            <span class="project-tag">AI</span>
+            <span class="project-tag">startup</span>
+          </div>          <h3>HealWare Co-Founder</h3> 
           <br/>
           <p style="font-size: 10px;">
             HEALWARE is a healthtech startup that is redefining drug safety — paving the way from preventing today’s allergy risks to enabling personalized, AI-driven prescriptions tomorrow, uniting medical expertise with the full power of predictive intelligence.
           </p>
           <br />
-          <a href="https://healware.net" target="_blank">View details</a>
+          <a href="https://healware.net" target="_blank">View Details</a>
         </div>
       </div>
     </section>
