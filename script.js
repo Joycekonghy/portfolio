@@ -1,8 +1,5 @@
 console.log("🚀 Script loaded!");
 
-// Remove aria-hidden if it's interfering with visibility
-document.body.removeAttribute('aria-hidden');
-
 const canvas = document.getElementById('star-canvas');
 const ctx = canvas.getContext('2d');
 
@@ -10,67 +7,62 @@ if (!canvas || !ctx) {
   console.error("Canvas or context not found.");
 }
 
-let stars = [];
-const STAR_COUNT = 300;
-const SPEED = 0.2;
+let particles = [];
+const PARTICLE_COUNT = 30;
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  console.log("✅ Canvas resized:", canvas.width, canvas.height);
 }
 
-function createStars() {
-  stars = [];
-  for (let i = 0; i < STAR_COUNT; i++) {
-    stars.push({
+function createParticles() {
+  particles = [];
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    particles.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 1.5 + 0.2,
-      velocity: Math.random() * 0.5 + 0.05
+      radius: Math.random() * 3 + 1,
+      velocity: Math.random() * 0.2 + 0.05,
+      opacity: Math.random() * 0.4 + 0.1,
+      color: Math.random() > 0.5 ? 'rgba(135, 206, 235, ' : 'rgba(221, 160, 221, '
     });
   }
-  console.log("✨ Stars created:", stars.length);
 }
 
-function drawStars() {
-  ctx.fillStyle = 'black'; // ← Add this
-  ctx.fillRect(0, 0, canvas.width, canvas.height); // ← Draw full red canvas
-
-
-  ctx.fillStyle = '#fff'; // Reset star color
-  stars.forEach(star => {
+function drawParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  particles.forEach(particle => {
+    const opacity = Math.sin(Date.now() * 0.001 + particle.x * 0.01) * 0.2 + particle.opacity;
+    ctx.fillStyle = particle.color + opacity + ')';
     ctx.beginPath();
-    ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
+    ctx.arc(particle.x, particle.y, particle.radius, 0, 2 * Math.PI);
     ctx.fill();
   });
-  console.log("⭐ Stars drawn:", stars.length);
 }
 
-function updateStars() {
-  stars.forEach(star => {
-    star.y += star.velocity * SPEED;
-    if (star.y > canvas.height) {
-      star.x = Math.random() * canvas.width;
-      star.y = 0;
+function updateParticles() {
+  particles.forEach(particle => {
+    particle.y += particle.velocity;
+    
+    if (particle.y > canvas.height + 10) {
+      particle.x = Math.random() * canvas.width;
+      particle.y = -10;
     }
   });
-  console.log("🔄 Stars updated:", stars.length);
 }
 
 function animate() {
-  drawStars();
-  updateStars();
+  drawParticles();
+  updateParticles();
   requestAnimationFrame(animate);
-  console.log("🔄 Animation frame requested");
 }
 
 window.addEventListener('resize', () => {
   resizeCanvas();
-  createStars();
+  createParticles();
 });
 
-// Initialize
 resizeCanvas();
-createStars();
+createParticles();
 animate(); 
